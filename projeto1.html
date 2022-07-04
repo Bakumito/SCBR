@@ -60,85 +60,755 @@
       </ul>
     </div>
     <div>
-      <h2>Identificação de Entidades e Relacionamentos</h2>
+      <h2>Dicionário de Dados - Projeto_1</h2>
       <div>
         <h3>Entidades</h3>
         <ul>
-          <li>Akuno</li>
-          <li>Professor</li>
-          <li>disciplina</li>
-          <li>Curso</li>
           <li>Departamento</li>
+          <li>Professor</li>
+          <li>turma</li>
+          <li>Curso</li>
+          <li>Aluno</li>
+          <li>Curso_Disciplina</li>
+          <li>Prof_Disciplina</li>
+          <li>Historico</li>
+          <li>Disciplina</li>
+          <li>Aluno_Disc</li>
+          <li>Disc_Hist</li>
+          <li>Telefones_Aluno</li>
+          <li>Tipo_Telefone</li>
+          <li>Endereço_Aluno</li>
+          <li>Tipo_Logradouro</li>
         </ul>
       </div>
       <div>
         <h3>Relacionamentos</h3>
         <ul>
-          <li>Aluno está matriculado em Curso</li>
-          <li>Aluno cursa disciplina</li>
-          <li>Aluno realizou disciplina</li>
-          <li>disciplina pertence a curso</li>
-          <li>Professor ministra disciplina</li>
-          <li>Professor pertence a departamento</li>
-          <li>Departamento é responsável por disciplina</li>
-          <li>Departamento controla curso</li>
-          <li>Disciplina depende de disciplina</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Atributos - Aluno</h3>
-        <ul>
-          <li>ID Matricula</li>
-          <li>Nome</li>
-          <li>Sobrenome</li>
-          <li>Endereço</li>
+          <p>Tabela para cadastro dos departamentos da faculdade</p>
+          <li>Departamento</li>
           <ul>
-            <li>Rua</li>
-            <li>Bairro</li>
-            <li>CEP</li>
-            <li>Cidade</li>
-            <li>Estado</li>
+            <li>Pertence - Professor</li>
+            <li>Controla - Curso</li>
+            <li>Gerencia - Disciplina</li>
           </ul>
-          <li>ID Curso</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Atributos - Professor</h3>
-        <ul>
-          <li>ID Professor</li>
-          <li>Nome</li>
-          <li>Sobrenome</li>
-          <li>ID Departamento</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Atributos - Disciplina</h3>
-        <li>ID Disciplina</li>
-        <li>Nome Disciplina</li>
-        <li>Descrição Curricular</li>
-        <li>ID Departamento</li>
-        <li>Número de Alunos</li>
-      </div>
-      <div>
-        <h3>Atributos - Curso</h3>
-        <ul>
-          <li>ID Curso</li>
-          <li>Nome</li>
-          <li>ID Departamento</li>
+          <p>Tabela para cadastro dos professores da faculdade</p>
+          <li>Professor</li>
+          <ul>
+            <li>Pertence - Departamento</li>
+            <li>Leciona - Prof_Disciplina</li>
+          </ul>
+          <p>Tabela para registro de turmas em andamento ou encerradas</p>
+          <li>Turma</li>
+          <ul>
+            <li>Gera - Curso</li>
+            <li>Pertence - Aluno</li>
+          </ul>
+          <p>Tabela para cadastro dos cursos oferecidos pela faculdade</p>
+          <li>Curso</li>
+          <ul>
+            <li>Controla - Departamento</li>
+            <li>Gera - Turma</li>
+            <li>Está Matriculado - Aluno</li>
+            <li>Possui - Curso_Disciplina</li>
+          </ul>
+          <p>
+            Tabela para cadastro de informações sobre os alunos da faculdade
+          </p>
+          <li>Aluno</li>
+          <ul>
+            <li>Está Matriculado - Curso</li>
+            <li>Pertence - Turma</li>
+            <li>Cursa - Aluno_Disc</li>
+            <li>Pertence a - Historico</li>
+            <li>Possui - Telefones_Aluno</li>
+          </ul>
+          <p>
+            Tabela para cadastro das disciplinas que compõem os cursos
+            oferecidos pela faculdade
+          </p>
+          <li>Disciplina</li>
+          <ul>
+            <li>Cursa - Aluno_Disc</li>
+            <li>Gerencia - Departamento</li>
+            <li>É lecionada - Prof_Disciplina</li>
+            <li>Pertence - Curso_Disciplina</li>
+            <li>Depende - Disciplina</li>
+            <li>Compõe - Disc_Hist</li>
+          </ul>
+          <p>Tabela para geração do histórico de notas e faltas dos alunos</p>
+          <li>Historico</li>
+          <ul>
+            <li>Pertence a - Aluno</li>
+            <li>É composto - Disc_Hist</li>
+          </ul>
+          <p>Tabela associativa entre Disciplina e Historico</p>
+          <li>Disc_Hist</li>
+          <ul>
+            <li>Compõe - Disciplina</li>
+            <li>É composto - Historico</li>
+          </ul>
+          <p>Tabela associativa entre Curso e Disciplina</p>
+          <li>Curso_Disciplina</li>
+          <ul>
+            <li>Possui - Curso</li>
+            <li>É composto - Disciplina</li>
+          </ul>
+          <p>Tabela associativa entre professor e disciplina</p>
+          <li>Prof_Disciplina</li>
+          <ul>
+            <li>Leciona - Professor</li>
+            <li>É lecionada - Disciplina</li>
+          </ul>
+          <p>Tabela para registro dos endereços dos alunos</p>
+          <li>Endereço_Aluno</li>
+          <ul>
+            <li>Possui - Aluno</li>
+            <li>É do tipo - Tipo_Logradouro</li>
+          </ul>
+          <p>Tabela de registro dos tipos de logradouros</p>
+          <li>Tipo_Logradouro</li>
+          <ul>
+            <li>Compõe - Endereço_Aluno</li>
+          </ul>
+          <p>Tabela associativa entre Aluno e Disciplina</p>
+          <li>Aluno_Disc</li>
+          <ul>
+            <li>Cursa - Aluno</li>
+            <li>É cursada - Disciplina</li>
+          </ul>
+          <p>Tabela para registro dos telefones dos alunos</p>
+          <li>Telefones_Aluno</li>
+          <ul>
+            <li>Possui - Aluno</li>
+            <li>Pertence - Tipo_Telefone</li>
+          </ul>
+          <p>Descrição dos tipos de telefones aceitos</p>
+          <li>Tipo_Telefone</li>
+          <ul>
+            <li>Define - Tipo_Telefone</li>
+          </ul>
         </ul>
       </div>
       <div>
         <h3>Atributos - Departamento</h3>
-        <ul>
-          <li>ID Departamento</li>
-          <li>Nome Departamento</li>
-        </ul>
+        <table border="1">
+          <tr>
+            <th>Atributo</th>
+            <th>Tipo de Dados</th>
+            <th>Comprim.</th>
+            <th>Restrições</th>
+            <th>Descrição</th>
+          </tr>
+          <tr>
+            <td>Cod_Departamento</td>
+            <td>Inteiro</td>
+            <td>2 bytes</td>
+            <td>PK, Not Null</td>
+            <td>Código de identificação do departamento</td>
+          </tr>
+          <tr>
+            <td>Nome_Departamento</td>
+            <td>Caractere</td>
+            <td>20 bytes</td>
+            <td>NOT NULL</td>
+            <td>Nome do departamento</td>
+          </tr>
+        </table>
       </div>
       <div>
-        <img
-          src="images/mer.PNG"
-          alt="Atributos, Entidades e Relacionamentos"
-        />
+        <h3>Atributos - Professor</h3>
+        <table border="1">
+          <tr>
+            <th>Atributo</th>
+            <th>Tipo de Dados</th>
+            <th>Comprim.</th>
+            <th>Restrições</th>
+            <th>Descrição</th>
+          </tr>
+          <tr>
+            <td>Cod_Professor</td>
+            <td>Inteiro</td>
+            <td>2 Bytes</td>
+            <td>PK, NOT NULL</td>
+            <td>Código de identificação do professor</td>
+          </tr>
+          <tr>
+            <td>Nome_Professor</td>
+            <td>Caractere</td>
+            <td>20 Bytes</td>
+            <td>NOT NULL</td>
+            <td>Nome do Professor</td>
+          </tr>
+          <tr>
+            <td>Sobrenome_Professor</td>
+            <td>Caractere</td>
+            <td>50 bytes</td>
+            <td>NOT NULL</td>
+            <td>Sobrenome do Professor</td>
+          </tr>
+          <tr>
+            <td>Cod_Departamento</td>
+            <td>Inteiro</td>
+            <td>2 bytes</td>
+            <td>FK, NOT NULL</td>
+            <td>Código de identificação do departamento</td>
+          </tr>
+          <tr>
+            <td>Status</td>
+            <td>Booleano</td>
+            <td>1 bit</td>
+            <td>NOT NULL</td>
+            <td>Status do professor - sim ou não lecinando</td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <h3>Atributos - Curso</h3>
+        <table border="1">
+          <tr>
+            <th>Atributo</th>
+            <th>Tipo de Dados</th>
+            <th>Comprim.</th>
+            <th>Restrições</th>
+            <th>Descrição</th>
+          </tr>
+          <tr>
+            <td>Cod_Curso</td>
+            <td>Inteiro</td>
+            <td>2 Bytes</td>
+            <td>PK, NOT NULL</td>
+            <td>Código de identificação do curso</td>
+          </tr>
+          <tr>
+            <td>Nome_Curso</td>
+            <td>Caractere</td>
+            <td>40 Bytes</td>
+            <td>NOT NULL</td>
+            <td>Nome do Curso</td>
+          </tr>
+          <tr>
+            <td>Cod_Departamento</td>
+            <td>Inteiro</td>
+            <td>2 bytes</td>
+            <td>FK, NOT NULL</td>
+            <td>Sobrenome do Professor</td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <h3>Atributos Turma</h3>
+        <table border="1">
+          <tr>
+            <th>Atributo</th>
+            <th>Tipo de Dados</th>
+            <th>Comprim.</th>
+            <th>Restrições</th>
+            <th>Descrição</th>
+          </tr>
+          <tr>
+            <td>Cod_Turma</td>
+            <td>Inteiro</td>
+            <td>2 Bytes</td>
+            <td>PK, NOT NULL</td>
+            <td>Código de identificação da turma</td>
+          </tr>
+          <tr>
+            <td>Cod_Curso</td>
+            <td>Inteiro</td>
+            <td>2 Bytes</td>
+            <td>FK, NOT NULL</td>
+            <td>Código de identificação do curso</td>
+          </tr>
+          <tr>
+            <td>Periodo</td>
+            <td>Caractere</td>
+            <td>5 bytes</td>
+            <td>NOT NULL</td>
+            <td>Periodo da turma, manhã, tarde ou noite</td>
+          </tr>
+          <tr>
+            <td>Num_Alunos</td>
+            <td>Inteiro</td>
+            <td>2 Bytes</td>
+            <td>NOT NULL</td>
+            <td>Número de alunos matriculados na turma</td>
+          </tr>
+          <tr>
+            <td>Data_Inicio</td>
+            <td>Data</td>
+            <td>4 Bytes</td>
+            <td>NOT NULL</td>
+            <td>Data de início da turma</td>
+          </tr>
+          <tr>
+            <td>Data_Fim</td>
+            <td>Data</td>
+            <td>4 Bytes</td>
+            <td>NOT NULL</td>
+            <td>Data de fim da turma</td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <h3>Atributos - Aluno</h3>
+        <table border="1">
+          <tr>
+            <th>Atributo</th>
+            <th>Tipo de Dados</th>
+            <th>Comprim.</th>
+            <th>Restrições</th>
+            <th>Descrição</th>
+          </tr>
+          <tr>
+            <td>RA</td>
+            <td>Caractere</td>
+            <td>6 Bytes</td>
+            <td>PK, NOT NULL</td>
+            <td>Código de identificação do aluno</td>
+          </tr>
+          <tr>
+            <td>Nome_Aluno</td>
+            <td>Caractere</td>
+            <td>20 Bytes</td>
+            <td>NOT NULL</td>
+            <td>Nome do Aluno</td>
+          </tr>
+          <tr>
+            <td>Sobrenome_Aluno</td>
+            <td>Caractere</td>
+            <td>50 bytes</td>
+            <td>NOT NULL</td>
+            <td>Sobrenome do aluno</td>
+          </tr>
+          <tr>
+            <td>CPF</td>
+            <td>Caractere</td>
+            <td>11 bytes</td>
+            <td>NOT NULL, UNIQUE</td>
+            <td>CPF do aluno</td>
+          </tr>
+          <tr>
+            <td>Status</td>
+            <td>Caractere</td>
+            <td>1 bit</td>
+            <td>NOT NULL</td>
+            <td>Status da matrícula do aluno</td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td>Caractere</td>
+            <td>60 Bytes</td>
+            <td>NOT NULL</td>
+            <td>E-mail do aluno</td>
+          </tr>
+          <tr>
+            <td>Whatsapp</td>
+            <td>Caractere</td>
+            <td>11 Bytes</td>
+            <td>NULL</td>
+            <td>Whatsapp do aluno</td>
+          </tr>
+          <tr>
+            <td>Cod_Turma</td>
+            <td>Inteiro</td>
+            <td>2 Bytes</td>
+            <td>FK, NOT NULL</td>
+            <td>Código da identificação da turma</td>
+          </tr>
+          <tr>
+            <td>Cod_Curso</td>
+            <td>Inteiro</td>
+            <td>2 Bytes</td>
+            <td>FK, NOT NULL</td>
+            <td>Código da identificação do curso</td>
+          </tr>
+          <tr>
+            <td>Sexo</td>
+            <td>Caractere</td>
+            <td>1 Byte</td>
+            <td>NOT NULL</td>
+            <td>Sexo do aluno</td>
+          </tr>
+          <tr>
+            <td>Nome_Mae</td>
+            <td>caractere</td>
+            <td>80 Bytes</td>
+            <td>NOT NULL</td>
+            <td>Nome da mãe do aluno</td>
+          </tr>
+          <tr>
+            <td>Nome_Pai</td>
+            <td>caractere</td>
+            <td>80 Bytes</td>
+            <td>NULL</td>
+            <td>Nome do pai do aluno</td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <h3>Atributos - Disciplina</h3>
+        <table border="1">
+          <tr>
+            <th>Atributo</th>
+            <th>Tipo de Dados</th>
+            <th>Comprim.</th>
+            <th>Restrições</th>
+            <th>Descrição</th>
+          </tr>
+          <tr>
+            <td>Cod_Disciplina</td>
+            <td>Inteiro</td>
+            <td>2 bytes</td>
+            <td>PK, Not Null</td>
+            <td>Código de identificação da disciplina</td>
+          </tr>
+          <tr>
+            <td>Nome_Disciplina</td>
+            <td>Caractere</td>
+            <td>30 bytes</td>
+            <td>NOT NULL</td>
+            <td>Nome da disciplina</td>
+          </tr>
+          <tr>
+            <td>Descrição</td>
+            <td>Caractere</td>
+            <td>200 bytes</td>
+            <td>NULL</td>
+            <td>Descrição da disciplina</td>
+          </tr>
+          <tr>
+            <td>Cod_Departamento</td>
+            <td>Inteiro</td>
+            <td>2 bytes</td>
+            <td>NOT NULL</td>
+            <td>Código do departamento responsável pela disciplina</td>
+          </tr>
+          <tr>
+            <td>Carga_Horaria</td>
+            <td>Inteiro</td>
+            <td>2 bytes</td>
+            <td>NOT NULL</td>
+            <td>Carga horária da disciplina</td>
+          </tr>
+          <tr>
+            <td>Num_Alunos</td>
+            <td>Inteiro</td>
+            <td>2 bytes</td>
+            <td>NOT NULL</td>
+            <td>Quantidade de alunos matriculados na disciplina</td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <h3>Atributos - Histórico</h3>
+        <table border="1">
+          <tr>
+            <th>Atributo</th>
+            <th>Tipo de Dados</th>
+            <th>Comprim.</th>
+            <th>Restrições</th>
+            <th>Descrição</th>
+          </tr>
+          <tr>
+            <td>Cod_Historico</td>
+            <td>Inteiro</td>
+            <td>2 bytes</td>
+            <td>PK, NOT NULL</td>
+            <td>Código de identificação do histórico</td>
+          </tr>
+          <tr>
+            <td>RA</td>
+            <td>Caractere</td>
+            <td>6 bytes</td>
+            <td>FK, NOT NULL</td>
+            <td>Código da identificação do aluno</td>
+          </tr>
+          <tr>
+            <td>Data_Inicio</td>
+            <td>Data</td>
+            <td>4 bytes</td>
+            <td>NOT NULL</td>
+            <td>Data de início do curso</td>
+          </tr>
+          <tr>
+            <td>Data_Fim</td>
+            <td>Inteiro</td>
+            <td>2 bytes</td>
+            <td>NULL</td>
+            <td>Data em que o aluno finalizou o curso</td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <h3>Atributos - Disc_Hist</h3>
+        <table border="1">
+          <tr>
+            <th>Atributo</th>
+            <th>Tipo de Dados</th>
+            <th>Comprim.</th>
+            <th>Restrições</th>
+            <th>Descrição</th>
+          </tr>
+          <tr>
+            <td>Cod_Historico</td>
+            <td>Inteiro</td>
+            <td>2 bytes</td>
+            <td>PK, FK, NOT NULL</td>
+            <td>Código de identificação do histórico</td>
+          </tr>
+          <tr>
+            <td>Cod_Disciplina</td>
+            <td>Inteiro</td>
+            <td>2 bytes</td>
+            <td>PK, FK, NOT NULL</td>
+            <td>Código da identificação da disciplina</td>
+          </tr>
+          <tr>
+            <td>Nota</td>
+            <td>Decimal</td>
+            <td>8 bytes</td>
+            <td>NOT NULL</td>
+            <td>Nota da disciplina</td>
+          </tr>
+          <tr>
+            <td>Frequencia</td>
+            <td>Inteiro</td>
+            <td>2 bytes</td>
+            <td>NOT NULL</td>
+            <td>Número de faltas na disciplina</td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <h3>Atributos - Curso_Disciplina</h3>
+        <table border="1">
+          <tr>
+            <th>Atributo</th>
+            <th>Tipo de Dados</th>
+            <th>Comprim.</th>
+            <th>Restrições</th>
+            <th>Descrição</th>
+          </tr>
+          <tr>
+            <td>Cod_Curso</td>
+            <td>Inteiro</td>
+            <td>2 bytes</td>
+            <td>PK, FK, NOT NULL</td>
+            <td>Código de identificação do curso</td>
+          </tr>
+          <tr>
+            <td>Cod_Disciplina</td>
+            <td>Inteiro</td>
+            <td>2 bytes</td>
+            <td>PK, FK, NOT NULL</td>
+            <td>Código da identificação da disciplina</td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <h3>Atributos - Prof_Disciplina</h3>
+        <table border="1">
+          <tr>
+            <th>Atributo</th>
+            <th>Tipo de Dados</th>
+            <th>Comprim.</th>
+            <th>Restrições</th>
+            <th>Descrição</th>
+          </tr>
+          <tr>
+            <td>Cod_Professor</td>
+            <td>Inteiro</td>
+            <td>2 bytes</td>
+            <td>PK, FK, NOT NULL</td>
+            <td>Código de identificação do Professor</td>
+          </tr>
+          <tr>
+            <td>Cod_Disciplina</td>
+            <td>Inteiro</td>
+            <td>2 bytes</td>
+            <td>PK, FK, NOT NULL</td>
+            <td>Código da identificação da disciplina</td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <h3>Atributos - Aluno_Disc</h3>
+        <table border="1">
+          <tr>
+            <th>Atributo</th>
+            <th>Tipo de Dados</th>
+            <th>Comprim.</th>
+            <th>Restrições</th>
+            <th>Descrição</th>
+          </tr>
+          <tr>
+            <td>RA</td>
+            <td>Caractere</td>
+            <td>6 bytes</td>
+            <td>PK, FK, NOT NULL</td>
+            <td>Código de identificação do aluno</td>
+          </tr>
+          <tr>
+            <td>Cod_Disciplina</td>
+            <td>Inteiro</td>
+            <td>2 bytes</td>
+            <td>PK, FK, NOT NULL</td>
+            <td>Código da identificação da disciplina</td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <h3>Atributos - Curso_Disciplina</h3>
+        <table border="1">
+          <tr>
+            <th>Atributo</th>
+            <th>Tipo de Dados</th>
+            <th>Comprim.</th>
+            <th>Restrições</th>
+            <th>Descrição</th>
+          </tr>
+          <tr>
+            <td>Cod_Endereco</td>
+            <td>Inteiro</td>
+            <td>1 byte</td>
+            <td>PK, NOT NULL</td>
+            <td>Código de identificação do endereço</td>
+          </tr>
+          <tr>
+            <td>RA</td>
+            <td>Caractere</td>
+            <td>6 bytes</td>
+            <td>PK, FK, NOT NULL</td>
+            <td>Código da identificação do aluno</td>
+          </tr>
+          <tr>
+            <td>Cod_Tipo_Logradouro</td>
+            <td>Inteiro</td>
+            <td>1 byte</td>
+            <td>FK, NOT NULL</td>
+            <td>Código do tipo do logradouro</td>
+          </tr>
+          <tr>
+            <td>Nome_Rua</td>
+            <td>Caractere</td>
+            <td>50 bytes</td>
+            <td>NOT NULL</td>
+            <td>Código da identificação do aluno</td>
+          </tr>
+          <tr>
+            <td>Num_Rua</td>
+            <td>Inteiro</td>
+            <td>2 bytes</td>
+            <td>NOT NULL</td>
+            <td>Número do imóvel</td>
+          </tr>
+          <tr>
+            <td>Complemento</td>
+            <td>Caractere</td>
+            <td>20 bytes</td>
+            <td>NULL</td>
+            <td>Complemento do endereço</td>
+          </tr>
+          <tr>
+            <td>CEP</td>
+            <td>Caractere</td>
+            <td>8 bytes</td>
+            <td>NOT NULL</td>
+            <td>CEP da Rua</td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <h3>Atributos - Tipo_Logradouro</h3>
+        <table border="1">
+          <tr>
+            <th>Atributo</th>
+            <th>Tipo de Dados</th>
+            <th>Comprim.</th>
+            <th>Restrições</th>
+            <th>Descrição</th>
+          </tr>
+          <tr>
+            <th>Cod_Tipo_Logradouro</th>
+            <th>Inteiro</th>
+            <th>1 byte</th>
+            <th>PK, NOT NULL</th>
+            <th>Código de identificação do tipo de logradouro</th>
+          </tr>
+          <tr>
+            <th>Tipo_Logradouro</th>
+            <th>Caractere</th>
+            <th>10 bytes</th>
+            <th>NOT NULL</th>
+            <th>Nome do tipo de logradouro</th>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <h3>Atributos - Telefones_Aluno</h3>
+        <table border="1">
+          <tr>
+            <th>Atributo</th>
+            <th>Tipo de Dados</th>
+            <th>Comprim.</th>
+            <th>Restrições</th>
+            <th>Descrição</th>
+          </tr>
+          <tr>
+            <th>Cod_Telefone_Aluno</th>
+            <th>Inteiro</th>
+            <th>1 byte</th>
+            <th>PK, NOT NULL</th>
+            <th>Código de identificação do telefone do aluno</th>
+          </tr>
+          <tr>
+            <th>RA</th>
+            <th>Caractere</th>
+            <th>6 bytes</th>
+            <th>FK, NOT NULL</th>
+            <th>RA do aluno</th>
+          </tr>
+          <tr>
+            <th>Cod_Tipo_Telefone</th>
+            <th>Inteiro</th>
+            <th>1 byte</th>
+            <th>FK, NOT NULL</th>
+            <th>Código do tipo do telefone</th>
+          </tr>
+          <tr>
+            <th>Telefone</th>
+            <th>Caractere</th>
+            <th>11 bytes</th>
+            <th>NOT NULL</th>
+            <th>Número do telefone</th>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <h3>Atributos - Tipo_Telefone</h3>
+        <table border="1">
+          <tr>
+            <th>Atributo</th>
+            <th>Tipo de Dados</th>
+            <th>Comprim.</th>
+            <th>Restrições</th>
+            <th>Descrição</th>
+          </tr>
+          <tr>
+            <th>Cod_Tipo_Telefone</th>
+            <th>Inteiro</th>
+            <th>1 byte</th>
+            <th>PK, NOT NULL</th>
+            <th>Código de identificação do tipo de telefone</th>
+          </tr>
+          <tr>
+            <th>Tipo_Telefone</th>
+            <th>Caractere</th>
+            <th>12 bytes</th>
+            <th>NOT NULL</th>
+            <th>Nome do tipo de telefone</th>
+          </tr>
+        </table>
       </div>
     </div>
   </body>

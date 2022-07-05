@@ -80,134 +80,164 @@
       <h3>Relacionamentos</h3>
       <p>Tabela para cadastro dos departamentos da faculdade</p>
       <ul>
-        <li>Departamento</li>
-        <ul>
-          <li>Pertence - Professor</li>
-          <li>Controla - Curso</li>
-          <li>Gerencia - Disciplina</li>
-        </ul>
+        <li>
+          Departamento:
+          <ul>
+            <li>Pertence - Professor</li>
+            <li>Controla - Curso</li>
+            <li>Gerencia - Disciplina</li>
+          </ul>
+        </li>
       </ul>
       <p>Tabela para cadastro dos professores da faculdade</p>
       <ul>
-        <li>Professor</li>
-        <ul>
-          <li>Pertence - Departamento</li>
-          <li>Leciona - Prof_Disciplina</li>
-        </ul>
+        <li>
+          Professor:
+          <ul>
+            <li>Pertence - Departamento</li>
+            <li>Leciona - Prof_Disciplina</li>
+          </ul>
+        </li>
       </ul>
       <p>Tabela para registro de turmas em andamento ou encerradas</p>
       <ul>
-        <li>Turma</li>
-        <ul>
-          <li>Gera - Curso</li>
-          <li>Pertence - Aluno</li>
-        </ul>
+        <li>
+          Turma:
+          <ul>
+            <li>Gera - Curso</li>
+            <li>Pertence - Aluno</li>
+          </ul>
+        </li>
       </ul>
       <p>Tabela para cadastro dos cursos oferecidos pela faculdade</p>
       <ul>
-        <li>Curso</li>
-        <ul>
-          <li>Controla - Departamento</li>
-          <li>Gera - Turma</li>
-          <li>Está Matriculado - Aluno</li>
-          <li>Possui - Curso_Disciplina</li>
-        </ul>
+        <li>
+          Curso:
+          <ul>
+            <li>Controla - Departamento</li>
+            <li>Gera - Turma</li>
+            <li>Está Matriculado - Aluno</li>
+            <li>Possui - Curso_Disciplina</li>
+          </ul>
+        </li>
       </ul>
       <p>Tabela para cadastro de informações sobre os alunos da faculdade</p>
       <ul>
-        <li>Aluno</li>
-        <ul>
-          <li>Está Matriculado - Curso</li>
-          <li>Pertence - Turma</li>
-          <li>Cursa - Aluno_Disc</li>
-          <li>Pertence a - Historico</li>
-          <li>Possui - Telefones_Aluno</li>
-        </ul>
+        <li>
+          Aluno:
+          <ul>
+            <li>Está Matriculado - Curso</li>
+            <li>Pertence - Turma</li>
+            <li>Cursa - Aluno_Disc</li>
+            <li>Pertence a - Historico</li>
+            <li>Possui - Telefones_Aluno</li>
+          </ul>
+        </li>
       </ul>
       <p>
         Tabela para cadastro das disciplinas que compõem os cursos oferecidos
         pela faculdade
       </p>
       <ul>
-        <li>Disciplina</li>
-        <ul>
-          <li>Cursa - Aluno_Disc</li>
-          <li>Gerencia - Departamento</li>
-          <li>É lecionada - Prof_Disciplina</li>
-          <li>Pertence - Curso_Disciplina</li>
-          <li>Depende - Disciplina</li>
-          <li>Compõe - Disc_Hist</li>
-        </ul>
+        <li>
+          Disciplina:
+          <ul>
+            <li>Cursa - Aluno_Disc</li>
+            <li>Gerencia - Departamento</li>
+            <li>É lecionada - Prof_Disciplina</li>
+            <li>Pertence - Curso_Disciplina</li>
+            <li>Depende - Disciplina</li>
+            <li>Compõe - Disc_Hist</li>
+          </ul>
+        </li>
       </ul>
       <p>Tabela para geração do histórico de notas e faltas dos alunos</p>
       <ul>
-        <li>Historico</li>
-        <ul>
-          <li>Pertence a - Aluno</li>
-          <li>É composto - Disc_Hist</li>
-        </ul>
+        <li>
+          Historico:
+          <ul>
+            <li>Pertence a - Aluno</li>
+            <li>É composto - Disc_Hist</li>
+          </ul>
+        </li>
       </ul>
       <p>Tabela associativa entre Disciplina e Historico</p>
       <ul>
-        <li>Disc_Hist</li>
-        <ul>
-          <li>Compõe - Disciplina</li>
-          <li>É composto - Historico</li>
-        </ul>
+        <li>
+          Disc_Hist:
+          <ul>
+            <li>Compõe - Disciplina</li>
+            <li>É composto - Historico</li>
+          </ul>
+        </li>
       </ul>
       <p>Tabela associativa entre Curso e Disciplina</p>
       <ul>
-        <li>Curso_Disciplina</li>
-        <ul>
-          <li>Possui - Curso</li>
-          <li>É composto - Disciplina</li>
-        </ul>
+        <li>
+          Curso_Disciplina:
+          <ul>
+            <li>Possui - Curso</li>
+            <li>É composto - Disciplina</li>
+          </ul>
+        </li>
       </ul>
       <p>Tabela associativa entre professor e disciplina</p>
       <ul>
-        <li>Prof_Disciplina</li>
-        <ul>
-          <li>Leciona - Professor</li>
-          <li>É lecionada - Disciplina</li>
-        </ul>
+        <li>
+          Prof_Disciplina:
+          <ul>
+            <li>Leciona - Professor</li>
+            <li>É lecionada - Disciplina</li>
+          </ul>
+        </li>
       </ul>
       <p>Tabela para registro dos endereços dos alunos</p>
       <ul>
-        <li>Endereço_Aluno</li>
-        <ul>
-          <li>Possui - Aluno</li>
-          <li>É do tipo - Tipo_Logradouro</li>
-        </ul>
+        <li>
+          Endereço_Aluno:
+          <ul>
+            <li>Possui - Aluno</li>
+            <li>É do tipo - Tipo_Logradouro</li>
+          </ul>
+        </li>
       </ul>
       <p>Tabela de registro dos tipos de logradouros</p>
       <ul>
-        <li>Tipo_Logradouro</li>
-        <ul>
-          <li>Compõe - Endereço_Aluno</li>
-        </ul>
+        <li>
+          Tipo_Logradouro:
+          <ul>
+            <li>Compõe - Endereço_Aluno</li>
+          </ul>
+        </li>
       </ul>
       <p>Tabela associativa entre Aluno e Disciplina</p>
       <ul>
-        <li>Aluno_Disc</li>
-        <ul>
-          <li>Cursa - Aluno</li>
-          <li>É cursada - Disciplina</li>
-        </ul>
+        <li>
+          Aluno_Disc:
+          <ul>
+            <li>Cursa - Aluno</li>
+            <li>É cursada - Disciplina</li>
+          </ul>
+        </li>
       </ul>
       <p>Tabela para registro dos telefones dos alunos</p>
       <ul>
-        <li>Telefones_Aluno</li>
-        <ul>
-          <li>Possui - Aluno</li>
-          <li>Pertence - Tipo_Telefone</li>
-        </ul>
+        <li>
+          Telefones_Aluno:
+          <ul>
+            <li>Possui - Aluno</li>
+            <li>Pertence - Tipo_Telefone</li>
+          </ul>
+        </li>
       </ul>
       <p>Descrição dos tipos de telefones aceitos</p>
       <ul>
-        <li>Tipo_Telefone</li>
-        <ul>
-          <li>Define - Tipo_Telefone</li>
-        </ul>
+        <li>
+          Tipo_Telefone:
+          <ul>
+            <li>Define - Tipo_Telefone</li>
+          </ul>
+        </li>
       </ul>
     </div>
     <div>

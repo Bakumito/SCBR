@@ -91,10 +91,17 @@
             <th>Descrição</th>
           </tr>
           <tr>
+            <td>ID_Usuario</td>
+            <td>Inteiro</td>
+            <td>4 bytes</td>
+            <td>PK, NOT NULL</td>
+            <td>Identificação do usuario na empresa.</td>
+          </tr>
+          <tr>
             <td>Email</td>
             <td>Caractere</td>
             <td>80 bytes</td>
-            <td>PK, NOT NULL</td>
+            <td>NOT NULL</td>
             <td>Email do usuario, usado como login</td>
           </tr>
           <tr>
@@ -104,14 +111,173 @@
             <td>NOT NULL</td>
             <td>Senha de login</td>
           </tr>
-
-
-
-
-
+          <tr>
+            <td>Nome_Usuario</td>
+            <td>Caractere</td>
+            <td>20 bytes</td>
+            <td>NOT NULL</td>
+            <td>Nome do usuario</td>
+          </tr>
+          <tr>
+            <td>Sobrenome_Usuario</td>
+            <td>Caractere</td>
+            <td>40 bytes</td>
+            <td>NOT NULL</td>
+            <td>Sobrenome do usuário</td>
+          </tr>
+          <tr>
+            <td>Nascimento</td>
+            <td>Data</td>
+            <td>8 bytes</td>
+            <td>NOT NULL</td>
+            <td>Data de nascimento do usuário</td>
+          </tr>
+          <tr>
+            <td>Foto</td>
+            <td>Caractere</td>
+            <td>200 bytes</td>
+            <td>NOT NULL</td>
+            <td>Endereço da hospedagem da foto do usuario</td>
+          </tr>
+          <tr>
+            <td>CPF</td>
+            <td>Caractere</td>
+            <td>11 bytes</td>
+            <td>NOT NULL, UNIQUE</td>
+            <td>CPF do usuário</td>
+          </tr>
+          <tr>
+            <td>Status_Usuário</td>
+            <td>Caractere</td>
+            <td>20 bytes</td>
+            <td>NOT NULL</td>
+            <td>Status do usuário (estagio, férias, ativo, afastado, demitido)</td>
+          </tr>
+        </table>
+        <h3>Tabela Endereco_Usuario</h3>
+        <table border="1">
+          <tr>
+            <th>Atributo</th>
+            <th>Tipo de Dados</th>
+            <th>Comprim.</th>
+            <th>Restrições</th>
+            <th>Descrição</th>
+          </tr>
+          <tr>
+            <td>Cod_End_Usuario</td>
+            <td>Inteiro</td>
+            <td>4 bytes</td>
+            <td>PK, NOT NULL</td>
+            <td>Codigo do endereço do usuário, gerado automaticamente</td>
+          </tr>
+          <tr>
+            <td>CEP</td>
+            <td>Caractere</td>
+            <td>8 bytes</td>
+            <td>NOT NULL</td>
+            <td>CEP do endereço do usuário</td>
+          </tr>
+          <tr>
+            <td>Cod_Tipo_Logradouro</td>
+            <td>Inteiro</td>
+            <td>4 bytes</td>
+            <td>FK, NOT NULL</td>
+            <td>Codigo do tipo do logradouro do usuário, usado como chave estrangeira para a tabela Tipo_Logradouro</td>
+          </tr>
+          <tr>
+            <td>Nome_Rua</td>
+            <td>Caractere</td>
+            <td>40 bytes</td>
+            <td>NOT NULL</td>
+            <td>Nome da rua do usuário</td>
+          </tr>
+          <tr>
+            <td>Num_Rua</td>
+            <td>Inteiro</td>
+            <td>4 bytes</td>
+            <td>NOT NULL</td>
+            <td>Número do edifício do usuário</td>
+          </tr>
+          <tr>
+            <td>Complemento</td>
+            <td>caractere</td>
+            <td>40 bytes</td>
+            <td>NULL</td>
+            <td>Complemento do endereço do usuário</td>
+          </tr>
+          <tr>
+            <td>ID_Usuario</td>
+            <td>Inteiro</td>
+            <td>4 bytes</td>
+            <td>FK, NOT NULL</td>
+            <td>Identificação do usuario na empresa, usado como chave estrangeira para a tabela Usuario.</td>
+          </tr>
+        </table>
+      </table>
+      <h3>Tipo_Logradouro</h3>
+      <table border="1">
+        <tr>
+          <th>Atributo</th>
+          <th>Tipo de Dados</th>
+          <th>Comprim.</th>
+          <th>Restrições</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>Cod_Tipo_Logradouro</td>
+          <td>Inteiro</td>
+          <td>4 bytes</td>
+          <td>PK, NOT NULL</td>
+          <td>Codigo do tipo do logradouro, gerado automaticamente</td>
+        </tr>
+        <tr>
+          <td>Tipo_Logradouro</td>
+          <td>Caractere</td>
+          <td>8 bytes</td>
+          <td>NOT NULL</td>
+          <td>Tipo do logradouro (Rua, Av., Praça, etc)</td>
+        </tr>
+      </table>
+        <h3>Telefone_Usuario</h3>
+        <table border="1">
+          <tr>
+            <th>Atributo</th>
+            <th>Tipo de Dados</th>
+            <th>Comprim.</th>
+            <th>Restrições</th>
+            <th>Descrição</th>
+          </tr>
+          <tr>
+            <td>Cod_Telefone</td>
+            <td>Inteiro</td>
+            <td>4 bytes</td>
+            <td>PK, NOT NULL</td>
+            <td>Codigo do telefone do usuário, gerado automaticamente</td>
+          </tr>
+          <tr>
+            <td>Cod_Tipo_Telefone</td>
+            <td>Inteiro</td>
+            <td>4 bytes</td>
+            <td>FK, NOT NULL</td>
+            <td>Codigo do tipo de telefone, chave estrangeirapara a tabela Tipo_Telefone</td>
+          </tr>
+          <tr>
+            <td>Num_Telefone</td>
+            <td>caractere</td>
+            <td>11 bytes</td>
+            <td>NOT NULL</td>
+            <td>Número do telefone do usuário</td>
+          </tr>
+          <tr>
+            <td>ID_Usuario</td>
+            <td>Inteiro</td>
+            <td>4 bytes</td>
+            <td>FK, NOT NULL</td>
+            <td>Identificação do usuario na empresa, usado como chave estrangeira para a tabela Usuario.</td>
+          </tr>          
         </table>
         <h3>Tipo_Telefone</h3>
-        < border="1">
+        <table border="1">
           <tr>
             <th>Atributo</th>
             <th>Tipo de Dados</th>
@@ -122,16 +288,161 @@
           <tr>
             <td>Cod_Tipo_Telefone</td>
             <td>Inteiro</td>
-            <td>1 byte</td>
+            <td>4 bytes</td>
             <td>PK, NOT NULL</td>
-            <td>Código de identificação do tipo de telefone</td>
+            <td>Codigo do tipo de telefone, chave primária gerado automaticamente</td>
           </tr>
           <tr>
             <td>Tipo_Telefone</td>
             <td>Caractere</td>
-            <td>12 bytes</td>
+            <td>20 bytes</td>
             <td>NOT NULL</td>
-            <td>Nome do tipo de telefone</td>
+            <td>Tipo do telefone do usuário (residencial, celular, comercial)</td>
+          </tr>            
+        </table>
+        <h3>Area_Departamento</h3>
+        <table border="1">
+          <tr>
+            <th>Atributo</th>
+            <th>Tipo de Dados</th>
+            <th>Comprim.</th>
+            <th>Restrições</th>
+            <th>Descrição</th>
+          </tr>
+          <tr>
+            <td>Cod_Departamento</td>
+            <td>Inteiro</td>
+            <td>4 bytes</td>
+            <td>PK, NOT NULL</td>
+            <td>Codigo do departamento, chave primária gerado automaticamente</td>
+          </tr>
+          <tr>
+            <td>Nome_Departamento</td>
+            <td>Caractere</td>
+            <td>40 bytes</td>
+            <td>NOT NULL</td>
+            <td>Nome do departamento</td>
+          </tr>
+          <tr>
+            <td>Cod_Cargo</td>
+            <td>Inteiro</td>
+            <td>4 bytes</td>
+            <td>FK, NOT NULL</td>
+            <td>Codigo do cargo, usado como chave estrangeira para a tabela Cargo</td>
+          </tr>    
+        </table>
+        <h3>Cargo</h3>
+        <table border="1">
+          <tr>
+            <th>Atributo</th>
+            <th>Tipo de Dados</th>
+            <th>Comprim.</th>
+            <th>Restrições</th>
+            <th>Descrição</th>
+          </tr>
+          <tr>
+            <td>Cod_Cargo</td>
+            <td>Inteiro</td>
+            <td>4 bytes</td>
+            <td>PK, NOT NULL</td>
+            <td>Codigo do cargo, chave primária gerado automaticamente</td>
+          </tr>
+          <tr>
+            <td>Nome_Cargo</td>
+            <td>Caractere</td>
+            <td>40 bytes</td>
+            <td>NOT NULL</td>
+            <td>Nome do cargo (Estagiario, gestor junior, gestor senior, gerente de produtos, etc)</td>
+          </tr>
+          <tr>
+            <td>ID_Usuario</td>
+            <td>Inteiro</td>
+            <td>4 bytes</td>
+            <td>FK, NOT NULL</td>
+            <td>Identificação do usuario na empresa, usado como chave estrangeira para a tabela Usuario.</td>
+          </tr>
+        </table>
+        <h3>Cargo_Tarefa</h3>
+        <table border="1">
+          <tr>
+            <th>Atributo</th>
+            <th>Tipo de Dados</th>
+            <th>Comprim.</th>
+            <th>Restrições</th>
+            <th>Descrição</th>
+          </tr>
+          <tr>
+            <td>Cod_Cargo</td>
+            <td>Inteiro</td>
+            <td>4 bytes</td>
+            <td>PK, FK, NOT NULL</td>
+            <td>Codigo do cargo, chave primária e estrangeira, fazendo ponte entre as tabelas Cargo e Tarefa</td>
+          </tr>
+          <tr>
+            <td>ID_Tarefa</td>
+            <td>Inteiro</td>
+            <td>4 bytes</td>
+            <td>PK, FK, NOT NULL</td>
+            <td>ID da tarefa, chave primária e estrangeira, fazendo ponte entre as tabelas Cargo e Tarefa</td>
+          </tr>
+        </table>
+        <h3>Tarefa</h3>
+        <table border="1">
+          <tr>
+            <th>Atributo</th>
+            <th>Tipo de Dados</th>
+            <th>Comprim.</th>
+            <th>Restrições</th>
+            <th>Descrição</th>
+          </tr>
+          <tr>
+            <td>ID_Tarefa</td>
+            <td>Inteiro</td>
+            <td>4 bytes</td>
+            <td>PK, NOT NULL</td>
+            <td>ID da tarefa, chave primária gerada automaticamente</td>
+          </tr>
+          <tr>
+            <td>Cod_Cargo</td>
+            <td>Inteiro</td>
+            <td>4 bytes</td>
+            <td>FK, NOT NULL</td>
+            <td>Codigo do cargo, chave estrangeira para a tabela Cargo</td>
+          </tr>
+          <tr>
+            <td>Mensagem</td>
+            <td>Caractere</td>
+            <td>200 bytes</td>
+            <td>NOT NULL</td>
+            <td>Descrição da tarefa</td>
+          </tr>
+          <tr>
+            <td>Data_Inicio</td>
+            <td>data</td>
+            <td>10 bytes</td>
+            <td>NOT NULL</td>
+            <td>Data de criação da tarefa</td>
+          </tr>
+          <tr>
+            <td>Data_Limite</td>
+            <td>data</td>
+            <td>10 bytes</td>
+            <td>NOT NULL</td>
+            <td>Data limite para a finalização da tarefa</td>
+          </tr>
+          <tr>
+            <td>Data_Fim</td>
+            <td>data</td>
+            <td>10 bytes</td>
+            <td>NULL</td>
+            <td>Data em que a tarefa foi finalizada</td>
+          </tr>
+          <tr>
+            <td>Status_Tarefa</td>
+            <td>Caractere</td>
+            <td>10 bytes</td>
+            <td>NOT NULL</td>
+            <td>Status atual da tarefa (Não inicializado, Em andamento, Finalizado)</td>
           </tr>
         </table>
   </body>

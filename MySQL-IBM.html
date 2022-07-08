@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curso SQL da IBM - Coursera</title>
+  </head>
+  <body>
+    <h1>SQL for Data Science</h1>
+    <p>
+      Describe SQL, Data, database, relational database.
+      <br />
+      List five basic SQL commands.
+    </p>
+    <h2>What is SQL?</h2>
+    <p>
+      SQL is a language used for relational databases, to query or get data out
+      of the databases. SQL - Structured English Query Language.
+    </p>
+    <h2>What is Data?</h2>
+    <p>
+      Data is a collection of facts in the form of words, numbers, or even
+      pictures. Data is one of the most critical assets of any business. It is
+      used and collected practically everywhere.
+    </p>
+    <h2>What is database?</h2>
+    <p>
+      A database is a repository of data. It is a program that stores data. A
+      database also provides the funcionality for adding, modifying, and
+      querying that data. There are different kinds of databases of different
+      requirements.
+    </p>
+    <h2>What is a Relational Database?</h2>
+    <p>
+      The data can be stored in various forms. When data is stored in tabular
+      form, the data is organized in tables like in a spreadsheet, which is
+      columns and rows. That's a relational database. The columns contain
+      properties about the item such as last name, first name, email, address,
+      city. A table is a collection of related things like a list of employees
+      or a list of book authors. In a relational database, you can form
+      relationships between tables.
+    </p>
+    <h2>What is DBMS or RDBMS?</h2>
+    <p>
+      A set of software tools for the data in the database is called a database
+      management system or DBMS for short. The terms database, database server,
+      database system, data server, and database management systems are often
+      used interchangeably. For relational databases, it's called a relational
+      database management system or RDBMS. RDBMS is a set of software tools that
+      controls the data such as acess, organization, and storage. And RDBMS
+      serves as the backbone of applications in many industries including
+      banking, transportation, health, and so on. Examples of relation database
+      management systems, are SQL, Oracle Database, DB2 Warehouse on Cloud, and
+      DB2 Express C.
+    </p>
+    <h2>5 simple statements for databases</h2>
+    <p>
+      For the majority of people, using a select data from the table, update
+      data in the table, delete data from the table. So those are the building
+      blocks for SQL for data science.
+    </p>
+    <ul>
+      <li>CREATE - a table</li>
+      <li>INSERT - data to populate the table</li>
+      <li>SELECT - data from the table</li>
+      <li>UPDATE - data in the table</li>
+      <li>DELETE - data from the table</li>
+    </ul>
+    <p>
+      These statements fall into two different categories. Data Definition
+      Language Statements (DDL) or Data Manipulation Language Statements (DML).
+      <br />
+      Data Definition Language (DDL) statements are used to define, change or
+      drop data.
+      <br />
+      Data Manipulation Language (DML) statements are used to read and modify
+      data.
+    </p>
+    <h3></h3>
+    <h2>Create Table statement</h2>
+    <p>
+      In a relational database, the data is organized in tables, like in a
+      spreadsheet, which is columns and rows.
+      <br />
+      Based on the AUTHOR entity as the example of a Book entities, we create
+      tables using the entity name. The entity attributes will be the columns of
+      the table. In this example, the following data types are used:
+    </p>
+    <pre>
+      <code>
+        AUTHOR(author_ID: char, lastname: varchar, firstname: varchar, email: varchar, city: carchar, country: char)
+      </code>
+    </pre>
+    <p>
+      Char is a character string of a fixed length. Varchar is a character
+      string of a variable lenght. In addition, the author_ID attribute is
+      assigned as a <strong>primary key</strong>, so that no duplicate values
+      can exist.
+      <br />
+      The primary key of a relational table uniquely identifies each
+      <strong>tuple</strong> or row in a table.
+      <br />
+      The author table is created using the CREATE TABLE statement. The CREATE
+      TABLE statement is one of the data definition language statements (DDL),
+      wich are used to create database objects. Based on the author entity and
+      its attributes, this slide shows the CREATE TABLE statement. Note that the
+      author_id is the primary key.
+    </p>
+  </body>
+</html>

@@ -314,5 +314,122 @@
         </code>
       </pre>
     </div>
+    <div>
+      <h2>Tipos de dados</h2>
+      <p>
+        Existem vários tipos de dados em um BD. Eles servem para especificar o
+        tipo do dado que será inserido, o que ajuda na classificação e
+        manutenção do tamanho do banco. <br />
+        Segue alguns links úteis com listas de tipos mais detalhados:
+      </p>
+      <ul>
+        <li>
+          <a
+            href="https://datacarpentry.org/sql-socialsci/01-relational-database/index.html#:~:text=the%20next%20section.-,What%20is%20a%20data%20type%3F,-A%20data%20type"
+            target="_blank"
+            >Data Management with SQL for Social Scientists *alpha*</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.w3schools.com/sql/sql_datatypes.asp"
+            target="_blank"
+            >SQL Data Types for MySQL, SQL Server, and MS Access</a
+          >
+        </li>
+      </ul>
+      <table border="1">
+        <tr>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>INT</td>
+          <td>Inteiros - Entre -2147483648 e 2147488647</td>
+        </tr>
+        <tr>
+          <td>TINYINT</td>
+          <td>Inteiros - Entre -128 e 127</td>
+        </tr>
+        <tr>
+          <td>SMALLINT</td>
+          <td>Inteiros - Entre -32768 e 32767</td>
+        </tr>
+        <tr>
+          <td>MEDIUMINT</td>
+          <td>Inteiros - Entre -8388608 e 8388607</td>
+        </tr>
+        <tr>
+          <td>BIGINT</td>
+          <td>Inteiros - Entre -9223372036854775808 e 9223372036854775807</td>
+        </tr>
+        <tr>
+          <td>DECIMAL(M,D)</td>
+          <td>
+            Ponto decimal com M digitos no total (precisão) e D casas decimais
+            (escala); o padrão é 10,0; M vai até 65 e D até 30.
+          </td>
+        </tr>
+        <tr>
+          <td>FLOAT(M,D)</td>
+          <td>
+            Ponto flutuante com precisão M e escala D; o padrão é 10,2; D vai
+            até 24.
+          </td>
+        </tr>
+        <tr>
+          <td>CHAR(M)</td>
+          <td>String que ocupa o tamanho fixo entre 0 e 255 caracteres.</td>
+        </tr>
+        <tr>
+          <td>BOOL / BOOLEAN</td>
+          <td>
+            Valores binários 0/1; na verdade é um alias para o tipo TINYINT(1)
+          </td>
+        </tr>
+        <tr>
+          <td>VARCHAR(M)</td>
+          <td>String de tamanho variável que vai até 65535 caracteres.</td>
+        </tr>
+        <tr>
+          <td>BLOB / MEDIUMBLOB / TINYBLOB</td>
+          <td>
+            Campo com tamanho máximo de 65535 caracteres binários; Binary Large
+            Objects, são usados para armazenar grandes quantidades de dados,
+            como imagens.
+          </td>
+        </tr>
+        <tr>
+          <td>MEDIUMTEXT</td>
+          <td>Permite armazenar até 16777215 caracteres.</td>
+        </tr>
+        <tr>
+          <td>LONGTEXT</td>
+          <td>Permite armazenar até 4294967295 caracteres.</td>
+        </tr>
+        <tr>
+          <td>DATE</td>
+          <td>Uma data de 01/01/1000 a 31/12/9999, no formato YYY-MM-DD</td>
+        </tr>
+        <tr>
+          <td>DATETIME</td>
+          <td>
+            Uma combinação de data e hora de 01/01/1000 00:00:00 a 31/12/9999
+            23:59:59, no formato YYY-MM-DD HH:MM:SS
+          </td>
+        </tr>
+        <tr>
+          <td>TIME</td>
+          <td>Hora apenas, no formato HH:MM:SS</td>
+        </tr>
+        <tr>
+          <td>YEAR(M)</td>
+          <td>
+            Ano, no formato 2 ou 4 dígitos; Se forem 2 (YEAR(2)), ano vai de
+            1970 a 2069; para 4 (YEAR(4)), vai de 1901 a 2155. O padrão é 4.
+          </td>
+        </tr>
+      </table>
+    </div>
   </body>
 </html>

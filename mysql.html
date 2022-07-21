@@ -313,6 +313,23 @@
           INSERT INTO tbl_teste_incremento (Nome) Values ('Havana')
         </code>
       </pre>
+      <p>Para verificar o valor atual do último registro na tabela:</p>
+      <pre>
+        <code>
+          SELECT MAX(nome_coluna)
+          FROM nome_tabela
+        </code>
+      </pre>
+      <p>
+        Para alterar o valor do auto incremento para prosseguir a partir de um
+        determinado número:
+      </p>
+      <pre>
+        <code>
+          ALTER TABLE nome_tabela
+          AUTO_INCREMENT = valor_numérico;
+        </code>
+      </pre>
     </div>
     <div>
       <h2>Tipos de dados</h2>
@@ -431,5 +448,6 @@
         </tr>
       </table>
     </div>
+    <div></div>
   </body>
 </html>

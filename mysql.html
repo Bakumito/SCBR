@@ -330,6 +330,23 @@
           AUTO_INCREMENT = valor_numérico;
         </code>
       </pre>
+      <p>
+        O comando alter table tem muitas variações, ele permite alterar o
+        conteudo da tabela, como exemplo, adicionar ou excluir uma coluna.
+      </p>
+      <pre>
+        <code>
+          ALTER TABLE nome_tabela
+          ADD nome_coluna VARCHAR(N) NOT NULL;
+
+          OU
+
+          ALTER TABLE nome_tabela
+          DROP COLUMN nome_coluna;
+
+          SELECT * FROM nome_tabela "para verificar as colunas existentes"
+        </code>
+      </pre>
     </div>
     <div>
       <h2>Tipos de dados</h2>

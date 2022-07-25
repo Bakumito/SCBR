@@ -107,5 +107,60 @@
       its attributes, this slide shows the CREATE TABLE statement. Note that the
       author_id is the primary key.
     </p>
+
+    <h2>Select statement</h2>
+    <p>
+      The main purpose of a database management system, is not just to store the
+      data but also facilitate retrieval of the data. So, after creating a
+      relational database table and inserting data into the table, we want to
+      see the data.
+      <br />
+      To see the data, we use the SELECT statement. The SELECT statement is a
+      data manipulation language statement. Data Manipulation Language
+      statements or DML statements are used to read and modify data. The SELECT
+      statement is called a query, and the output we get from executing this
+      query is called a result set or a result table.
+      <br />
+      In its simplest form, a SELECT statement is select star from table name:
+    </p>
+    <pre>
+      <code>
+        SELECT *
+        FROM nome_tabela
+        ;
+
+        SELECT column1, column2, columnN
+        FROM nome_tabela
+        ;
+
+        SELECT *
+        FROM table_name
+        WHERE nome_coluna > valor
+        ;
+
+        SELECT *
+        FROM table_name
+        WHERE nome_coluna = 'descrição'
+        ;        
+      </code>
+    </pre>
+    <p>
+      Relational operations helps us in restricting the result set by allowing
+      us to use the clause WHERE. The WHERE clause always requires a predicate.
+      A predicate is conditioned evaluates to true, false or unknown.
+      <br />
+      Predicates are used in the search condition of the WHERE clause.
+      <br />
+      There are other comparison operators supported by a relational database
+      management system:
+    </p>
+    <ul>
+      <li>equal to</li>
+      <li>greater than</li>
+      <li>less than</li>
+      <li>greater than or equal to</li>
+      <li>less than or equal to</li>
+      <li>not equal to</li>
+    </ul>
   </body>
 </html>

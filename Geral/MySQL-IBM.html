@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="stylesheet.css"
+      media="screen"
+    />
     <title>Curso SQL da IBM - Coursera</title>
   </head>
   <body>
@@ -162,5 +168,151 @@
       <li>less than or equal to</li>
       <li>not equal to</li>
     </ul>
+    <div>
+      <h2>COUNT, DISTINCT, LIMIT</h2>
+      <h3>COUNT</h3>
+      <p>
+        COUNT is a built-in database function that retrieves the number of rows
+        that match the query criteria.
+      </p>
+      <pre>
+        <code>
+          SELECT COUNT *
+          FROM nome_tabela
+        </code>
+      </pre>
+      <p>
+        To retrieve the number of rows where a specific attribute matches the
+        criteria:
+      </p>
+      <pre>
+        SELECT COUNT nome_coluna
+        FROM nome_tabela
+        WHERE nome_coluna='criterio'_ou_valor
+      </pre>
+      <h3>DISTINCT</h3>
+      <p>DISTINCT is used to remove duplicate values from a result set.</p>
+      <pre>
+        <code>
+          SELECT DISTINCT nome_coluna
+          FROM nome_tabela
+        </code>
+      </pre>
+      <p>
+        To retrieve a list of unique data that match a criteria, removing all
+        duplicate values of the same criteria:
+      </p>
+      <pre>
+          <code>
+            SELECT DISTINCT nome_coluna1
+            FROM nome_tabela
+            WHERE nome_tabela2='criterio'_ou_valor
+          </code>
+        </pre>
+      <h3>LIMIT</h3>
+      <p>
+        LIMIT is used for restricting the number of rows retrieved from the
+        database.
+      </p>
+      <pre>
+        <code>
+          SELECT *
+          FROM nome_tabela
+          LIMIT valor_numérico
+        </code>
+      </pre>
+      <p>
+        This can be very useful to examine the results set by looking at just a
+        few rows instead of retrieving the entire result set wich may be very
+        large.
+      </p>
+      <pre>
+        <code>
+          SELECT nome_coluna1
+          FROM nome_tabela
+          WHERE nome_coluna2=valor
+          LIMIT valor_numérico
+        </code>
+      </pre>
+    </div>
+    <h3>INSERT</h3>
+    <p>
+      After table is created, the table needs to be populated with data. To
+      insert data into a table, we use the INSERT statement.
+      <br />
+      The INSERT statement, wich is a data manipulation language statement, or
+      DML statements, is used to add new rows to a table.
+      <br />
+      The syntax of the INSERT statement looks like this:
+    </p>
+    <pre>
+      <code>
+        INSERT INTO nome_tabela, nome_coluna, VALUES()
+      </code>
+    </pre>
+    <p>
+      In the statement, nome_tabela identifies the table, nome_coluna list
+      identifies each column in the table, and the values clause specifies the
+      data values to be added to the columns in the table.
+      <br />
+      An example to add a row with the data for Raul Chong, we insert a row with
+      an author underscore ID of A one, the last name is Chong, the first name
+      as Raul, the email as RFC@IBM.com, the city is Toronto, and the country as
+      CA for Canada. The author table has six columns, so the INSERT statement
+      lists the six column names separated by commas, followed by a value for
+      each of the columns also separated by commas.
+      <br />
+      It is important that the number of values provided in the values clause is
+      equal to the number of column names specified in the column name list.
+      This ensures that each column has a value.
+      <br />
+      Tables do not need to be populated one row at a time, multiple rows can be
+      inserted by specifying each row in the values clause.
+      <br />
+      In the values clause, each row is separated by a comma.
+    </p>
+    <h3>UPDATE & DELETE Statements</h3>
+    <p>
+      After a table is created and populated with data, the data in a table can
+      be altered with the UPDATE statement.
+      <br />
+      The UPDATE statement is one of the data manipulation language or DML
+      statements. DML statements are used to read and modify data.
+      <br />
+      To alter or modify the data in a table, the UPDATE statement is used. The
+      syntax of the UPDATE statement looks like this:
+    </p>
+    <pre>
+      <code>
+        UPDATE nome_tabela
+        SET nome_coluna=valor
+        WHERE condição
+      </code>
+    </pre>
+    <p>
+      <strong>
+        Note that if the WHERE clause is not specified, all the rows in the
+        table will be updated.
+      </strong>
+      <br />
+      Sometime later, there might be a need to remove one or more rows from a
+      table. The rows are removed with the DELETE statement. The DELETE
+      statement is one of the data manipulation language statements used to read
+      and modify data. The syntax of the DELETE statement looks like this:
+    </p>
+    <pre>
+      <code>
+        DELETE FROM nome_tabela 
+        WHERE condição
+      </code>
+    </pre>
+    <p>
+      The rows to be removed are specified in the WHERE condition.
+      <br />
+      <strong>
+        Note that if the WHERE clause is not specified, all the rows in the
+        table will be removed.
+      </strong>
+    </p>
   </body>
 </html>

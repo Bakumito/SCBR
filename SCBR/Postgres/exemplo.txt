@@ -1,0 +1,7 @@
+  oid  |  datname  | datdba | encoding |         datcollate         |          datctype          | datistemplate | datallowconn | datconnlimit | datlastsysoid | datfrozenxid | datminmxid | dattablespace |               datacl                
+-------+-----------+--------+----------+----------------------------+----------------------------+---------------+--------------+--------------+---------------+--------------+------------+---------------+-------------------------------------
+ 13754 | postgres  |     10 |        6 | English_United States.1252 | English_United States.1252 | f             | t            |           -1 |         13753 |          727 |          1 |          1663 | 
+     1 | template1 |     10 |        6 | English_United States.1252 | English_United States.1252 | t             | t            |           -1 |         13753 |          727 |          1 |          1663 | {=c/postgres,postgres=CTc/postgres}
+ 13753 | template0 |     10 |        6 | English_United States.1252 | English_United States.1252 | t             | f            |           -1 |         13753 |          727 |          1 |          1663 | {=c/postgres,postgres=CTc/postgres}
+(3 rows)
+

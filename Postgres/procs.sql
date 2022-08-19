@@ -15,7 +15,7 @@ create or replace view vw_dados_funcionario (
 	F.cpf,
 	E.cep,
 	E.nome_Rua || ', ' || E.numero_rua || ', ' || E.complemento || ', ' || E.bairro || ', ' || C.nome || ', ' || UF.uf,
-	coalesce(EM.email, EM2.email, EM3.email) as email,
+	coalesce(EM.email, EM2.email) as email,
 	ddd.cod || '-' || T.numero,
 	EQ.nome,
 	TF.tipo
@@ -33,10 +33,7 @@ create or replace view vw_dados_funcionario (
 				and EM.id_tipo_email = 2
 			left join email EM2
 				on F.id = EM2.id_funcionario
-					and EM2.id_tipo_email = 1
-			left join email EM3
-				on F.id = EM3.id_funcionario
-					and EM3.id_tipo_email = 3		
+					and EM2.id_tipo_email != 2
 		left join telefone T
 			on F.id = T.id_funcionario
 		left join ddd
@@ -49,3 +46,9 @@ create or replace view vw_dados_funcionario (
 			on F.id_tipo_funcionario = TF.id
 ;
 select * from vw_dados_funcionario;
+
+-- select * from funcionario
+-- select * from email
+
+-- insert into funcionario (nome, sobrenome, cpf, senha, id_tipo_funcionario) values ('Luis Gabriel', 'Pinheiro', 0050835058300, '0055aaafff', 3)
+-- insert into email (id_tipo_email, email, id_funcionario) values ('3', 'gabriel@alternativo.com', 4)
